@@ -16,16 +16,6 @@ def main(function):
     # Create a VideoCapture object
     cap = cv2.VideoCapture(0)
 
-    # Create the background subtractor object
-    # Use the last 700 video frames to build the background
-    # back_sub = cv2.createBackgroundSubtractorMOG2(history=700,
-    #                                               varThreshold=25, detectShadows=True)
-
-    # Create kernel for morphological operation
-    # You can tweak the dimensions of the kernel
-    # e.g. instead of 20,20 you can try 30,30.
-    kernel = np.ones((20, 20), np.uint8)
-
     while (True):
 
         # Capture frame-by-frame
