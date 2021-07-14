@@ -1,16 +1,29 @@
-# This is a sample Python script.
+from styleTransfer import fastStyleTransfer
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+import fastStyleTransfer.fastStyleTransfer.neural_style.transferFunction.StyleClass as StyleClass
+from styleTransfer.fastStyleTransfer.fastStyleTransfer.neural_style import utils
+
+import os
+import sys
+import torch
+from torchvision import transforms
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+cwd = os.getcwd()
+
+images_dir = cwd+'/styleTransfer/fastStyleTransfer/neural_style/images'
+models_dir = cwd+'/styleTransfer/fastStyleTransfer/neural_style/saved_models'
+sys.path.append(images_dir)
+sys.path.append(models_dir)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+modelpath = models_dir+'candy.pth'
+styleClass = StyleClass(modelpath)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+imagepath = images_dir+'/content-images/amber.jpg'
+image = utils.load_image(imagepath)
+
+transform = transforms.ToTensor()
+tensor_image = transform(image)
+
+output = styleClass.stylize(tensor_image)

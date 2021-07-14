@@ -26,7 +26,7 @@ Author:
 # from __future__ import print_function  # Python 2/3 compatibility
 import cv2  # Import the OpenCV library
 import numpy as np  # Import Numpy library
-
+import torch
 
 # Project: Object Tracking
 # Author: Addison Sears-Collins
@@ -58,6 +58,8 @@ def main():
         # This method returns True/False as well
         # as the video frame.
         ret, frame = cap.read()
+        print('frame max',np.max(frame))
+        print('frame min', np.min(frame))
 
         # Use every frame to calculate the foreground mask and update
         # the background

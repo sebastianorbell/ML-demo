@@ -10,3 +10,4 @@ from .neural_style import *
 from .transformer_net import *
 from .utils import *
 from .vgg import *
+from .transferFunction import *
