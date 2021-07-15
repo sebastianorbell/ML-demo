@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="sebastiano@gbnwp-vxterm001.compute.graphcore.ai:22" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="sebastiano@gbnwp-vxterm001.compute.graphcore.ai:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/sebastiano/tmp/style_transfer" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
